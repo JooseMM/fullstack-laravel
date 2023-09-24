@@ -1,0 +1,47 @@
+/* reset styles */
+*,
+* > * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* helper classes */
+
+.flex {
+    display: flex;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-column {
+    flex-direction: column;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links > li {
+    margin-right: 3rem;
+}
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+/* element unique classes */
+
+nav {
+    margin: 1rem 2rem;
+}
