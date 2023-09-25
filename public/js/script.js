@@ -1,19 +1,16 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     var taskDetailsMobileBtn = document.getElementById(
-//         "showTaskDetailsMobileBtn"
-//     );
-//     var taskDetailsMobileDiv = document.getElementById("taskDetailsMobileDiv");
+// Select all buttons with the class
+let buttons = document.querySelectorAll(".details-list-btn");
 
-//     taskDetailsMobileBtn.addEventListener("click", function () {
-//         if (
-//             taskDetailsMobileDiv.style.display === "none" ||
-//             taskDetailsMobileDiv.style.display === ""
-//         ) {
-//             // Show the div
-//             taskDetailsMobileDiv.style.display = "block";
-//         } else {
-//             // Hide the div
-//             taskDetailsMobileDiv.style.display = "none";
-//         }
-//     });
-// });
+// Loop through the selected buttons and add a click event listener to each
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        //grab the container id using the button id
+        var identifier = document.getElementById(`detail-div-id${button.id}`);
+        //do the logic to hide and show details
+        if (identifier.classList.contains("hidden")) {
+            identifier.classList.remove("hidden");
+        } else {
+            identifier.classList.add("hidden");
+        }
+    });
+});

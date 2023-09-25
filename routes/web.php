@@ -15,7 +15,8 @@ use App\Models\Task;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+        return redirect('/app');
+    // return view('welcome');
 });
 
 Route::get('/app', function () {
