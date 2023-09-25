@@ -154,3 +154,9 @@ main h1:first-child {
 .details-menu-expanded {
     flex-basis: 100%;
 }
+
+@media (min-width: 1000px) {
+    .details-list-btn-mobile {
+        display: none;
+    }
+}

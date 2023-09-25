@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <title>To do App</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -22,5 +23,6 @@
 
     {{$slot}}
     <script src="{{asset('js/script.js')}}"></script>
+    
 </body>
 </html>

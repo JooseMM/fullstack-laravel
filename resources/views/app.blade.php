@@ -14,14 +14,13 @@
         @foreach ($data as $item) 
             <div class="task-list-item flex align-center justify-between flex-wrap">
                 <span>{{"#" . $item->id}}</span><span class="truncate">{{$item->task}}</span>
-                <button alt="expand button task details" class="details-list-btn" id={{$item->id}}>
+                <button alt="expand button task details" class="details-list-btn-mobile" id={{$item->id}} >
                     <img src={{ asset('./Icons/task-list-detail-btn.svg') }} >
                 </button>
-                <div class="details-menu-expanded hidden" id={{'detail-div-id'. $item->id}}>
+                <div class="details-menu-expanded" id={{"details-menu" . $item->id}}>
                     <button>complete</button>
                     <button>delete</button>
                 </div>
-
             </div>
         @endforeach
     </div>   

@@ -1,16 +1,35 @@
-// Select all buttons with the class
-let buttons = document.querySelectorAll(".details-list-btn");
+// // //hide all menu details
+// let isBtnVisible =
+//     $(".details-list-btn-mobile").css("display") == "none" ? false : true;
 
-// Loop through the selected buttons and add a click event listener to each
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        //grab the container id using the button id
-        var identifier = document.getElementById(`detail-div-id${button.id}`);
-        //do the logic to hide and show details
-        if (identifier.classList.contains("hidden")) {
-            identifier.classList.remove("hidden");
-        } else {
-            identifier.classList.add("hidden");
-        }
-    });
-});
+// if (isBtnVisible) {
+//     console.log("its!");
+// } else {
+//     console.log("It's not!");
+// }
+const mediaQuery = window.matchMedia("(min-width: 1000px)");
+
+function showDetails() {}
+
+function handleMediaQueryChange(mediaQuery) {
+    if (!mediaQuery.matches) {
+        $(".details-menu-expanded").hide();
+
+        $(".details-list-btn-mobile").on("click", function () {
+            let selectedDiv = $(`#details-menu${$(this).attr("id")}`);
+
+            if (selectedDiv.attr("style")) {
+                selectedDiv.show();
+            } else {
+                selectedDiv.hide();
+            }
+        });
+    } else {
+    }
+}
+
+//adding an event handler for every button with a class selector
+handleMediaQueryChange(mediaQuery);
+
+// Add a listener for changes in the media query
+mediaQuery.addListener(handleMediaQueryChange);
