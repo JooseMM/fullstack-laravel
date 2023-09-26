@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 /* reset styles */
+:root {
+    --main-bg-color: #DEE6ED;
+    --default-btn-color: #D8973C;
+    --task-bg-color: #D5D9DD;
+    --very-dark-blue: #263140;
+}
 *,
 * > * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
-    color: #273746;
+    color: var(--very-dark-blue);
 }
+
+
 ul {
     margin: 0;
     padding: 0;
@@ -37,11 +45,11 @@ form {
     margin: 0;
 }
 /* helper classes */
-.hidden {
-    display: none;
-}
 .flex {
     display: flex;
+}
+.hidden {
+    display: none;
 }
 .flex-wrap {
     flex-wrap: wrap;
@@ -55,11 +63,14 @@ form {
 .justify-between {
     justify-content: space-between;
 }
+.justify-end {
+    justify-content: flex-end;
+}
 .justify-center {
     justify-content: center;
     align-items: center;
 }
-.align-center {
+.center {
     align-items: center;
 }
 
@@ -69,7 +80,7 @@ nav {
     margin: 2rem;
 }
 body {
-    background-color: #DEE6ED;
+    background-color: var(--main-bg-color);
 }
 
 form {
@@ -101,8 +112,9 @@ form > label {
 }
 
 .task-list-item {
+    position: relative;
     padding: 1rem 1.5rem;
-    background-color: #D5D9DD;
+    background-color:var(--task-bg-color);
     margin-block: 1rem;
     border-radius: 0.5rem;
 }
@@ -133,7 +145,7 @@ main h1:first-child {
     margin-right: 0.8rem;
 }
 .form-input-div > button {
-    background-color: #D8973C;
+    background-color: var(--default-btn-color);
     color: white;
     font-size: bolder;
     border-radius: 0.3rem;
@@ -151,9 +163,26 @@ main h1:first-child {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.details-menu-expanded {
-    flex-basis: 100%;
+.details-expanded-div {
+    flex-basis: 80%;  
 }
+.details-menu-div {
+    border-radius: 0.5rem;
+    background-color: var(--very-dark-blue);
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+}
+.details-menu-div > button:first-child {
+    margin-right: 1.5rem;
+}
+.clicked-btn {
+    position: relative;
+    top: 3.3rem;
+}
+.clicked-btn > img:first-child {
+     transform: rotate(180deg); 
+}
+
 
 @media (min-width: 1000px) {
     .details-list-btn-mobile {

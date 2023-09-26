@@ -1,35 +1,16 @@
-// // //hide all menu details
-// let isBtnVisible =
-//     $(".details-list-btn-mobile").css("display") == "none" ? false : true;
-
-// if (isBtnVisible) {
-//     console.log("its!");
-// } else {
-//     console.log("It's not!");
-// }
-const mediaQuery = window.matchMedia("(min-width: 1000px)");
-
-function showDetails() {}
-
-function handleMediaQueryChange(mediaQuery) {
-    if (!mediaQuery.matches) {
-        $(".details-menu-expanded").hide();
-
-        $(".details-list-btn-mobile").on("click", function () {
-            let selectedDiv = $(`#details-menu${$(this).attr("id")}`);
-
-            if (selectedDiv.attr("style")) {
-                selectedDiv.show();
-            } else {
-                selectedDiv.hide();
-            }
-        });
+$(".details-list-btn-mobile").on("click", function () {
+    let clickedBtn = $(this);
+    let selectedDiv = $(`#details-menu-${clickedBtn.attr("id")}`);
+    let taskDesc = $(`#task-${clickedBtn.attr("id")}`);
+    if (selectedDiv.hasClass("hidden")) {
+        //if button is clicked and details are hidden do this:
+        selectedDiv.removeClass("hidden");
+        clickedBtn.addClass("clicked-btn");
+        taskDesc.removeClass("truncate");
     } else {
+        //if button is clicked and details are visible do this:
+        selectedDiv.addClass("hidden");
+        clickedBtn.removeClass("clicked-btn");
+        taskDesc.addClass("truncate");
     }
-}
-
-//adding an event handler for every button with a class selector
-handleMediaQueryChange(mediaQuery);
-
-// Add a listener for changes in the media query
-mediaQuery.addListener(handleMediaQueryChange);
+});
