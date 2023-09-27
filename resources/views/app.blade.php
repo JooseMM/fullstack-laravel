@@ -12,15 +12,19 @@
     </form>
     <div class="task-list-table ">
         @foreach ($data as $item) 
-            <div class="task-list-item flex center justify-between flex-wrap">
-                <span>{{"#" . $item->id}}</span><span class="truncate" id={{'task-' . $item->id}}>{{$item->task}}</span>
-                <button alt="expand button task details" class="details-list-btn-mobile" id={{$item->id}} >
-                    <img src={{ asset('./Icons/task-list-detail-btn.svg') }} >
-                </button>
-                <div class="details-expanded-div flex justify-end hidden" id={{"details-menu-" . $item->id}}>
-                    <div class="details-menu-div flex center">
-                        <button><img src={{asset("./Icons/delete-icon-task.svg")}} alt=""></button>
-                        <button><img src={{asset("./Icons/done-icon-task.svg")}} alt=""></button>
+            <div class="task-list-container flex center ">
+                
+                <span id={{'fix-span-'. $item->id}}>{{"#" . $item->id}}</span>
+                <div class="task-info-container flex center justify-between">
+                    <span class="truncate" id={{'task-' . $item->id}}>{{$item->task}}</span>                
+                    <button alt="expand button task details" class="details-list-btn-mobile" id={{$item->id}} >
+                        <img src={{ asset('./Icons/task-list-detail-btn.svg') }} >
+                    </button>
+                    <div class="details-expanded-container flex justify-end hidden" id={{"details-menu-" . $item->id}}>
+                        <div class="details-menu-container flex center">
+                            <button><img src={{asset("./Icons/delete-icon-task.svg")}} alt=""></button>
+                            <button><img src={{asset("./Icons/done-icon-task.svg")}} alt=""></button>
+                        </div>
                     </div>
                 </div>
             </div>

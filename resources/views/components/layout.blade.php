@@ -10,14 +10,14 @@
 </head>
 <body>
     <header>
-        <nav class="flex flex-row justify-between align-center">
-            <a href="/">Todo App</a>
-            {{-- <ul class="flex flex-row nav-links">
+        <nav class="flex flex-row justify-between center">
+            <a href="/" id="logo">Todo App</a>
+            <ul class="flex flex-row nav-links hidden" id="navbar-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/app">App</a></li>
                 <li><a href="/about">About</a></li>
-            </ul> --}}
-            <button><img src={{asset('Icons/mobile-menu-button.svg')}} alt=""></button>
+            </ul>
+            <button id="mobile-toogle-btn"><img src={{asset('Icons/mobile-menu-button.svg')}} alt="menu-icon" id="btn-icon"></button>
         </nav>
     </header>
 

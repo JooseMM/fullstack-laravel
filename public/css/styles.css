@@ -75,7 +75,10 @@ form {
 }
 
 /* element unique classes */
-
+#btn-icon {
+    height: 30px;
+    width: 33px;
+}
 nav {
     margin: 2rem;
 }
@@ -105,26 +108,28 @@ form > label {
 /* custom classes */
 
 .nav-links > li {
-    margin-right: 3rem;
+    margin-right: 10vw;
 }
 .nav-links li:last-child {
     margin-right: 0;
 }
+a {
+    font-weight: 400;
+}
 
-.task-list-item {
-    position: relative;
-    padding: 1rem 1.5rem;
+.task-list-container {
+    padding: 1.5rem 1.5rem;
     background-color:var(--task-bg-color);
     margin-block: 1rem;
     border-radius: 0.5rem;
 }
 
-.task-list-item span:first-child {
+.task-list-container > span:first-child {
     font-size: 2rem;
     font-weight: 900;
 }
 
-nav a:first-child {
+nav > a:first-child {
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -158,31 +163,42 @@ main h1:first-child {
     width: 90%;
 }
 .truncate {
-  max-width: 150px;
+  max-width: 35vw;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.details-expanded-div {
-    flex-basis: 80%;  
+.details-expanded-container {
+    flex-basis: 82%;  
 }
-.details-menu-div {
+.details-menu-container {
     border-radius: 0.5rem;
     background-color: var(--very-dark-blue);
     padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
 }
-.details-menu-div > button:first-child {
+.details-menu-container > button:first-child {
     margin-right: 1.5rem;
 }
 .clicked-btn {
-    position: relative;
-    top: 3.3rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 .clicked-btn > img:first-child {
      transform: rotate(180deg); 
 }
 
+.task-info-container {
+    margin-left: 2rem;
+    position: relative;
+    width: 90%;
+    flex-wrap: wrap;
+}
+.fix-span-alignment {
+    position: relative;
+    bottom: 2.3rem;
+}
 
 @media (min-width: 1000px) {
     .details-list-btn-mobile {
